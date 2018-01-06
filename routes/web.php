@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,9 +9,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function()
+Route::get('/', 'pageController@home');
+
+Route::get('register', function()
 {
-    return View::make('pages.home');
+    return View::make('pages.register');
 });
 
 Route::get('login', function()
@@ -25,10 +26,7 @@ Route::get('about', function()
     return View::make('pages.about');
 });
 
-Route::get('products', function()
-{
-    return View::make('pages.products');
-});
+Route::get('products', 'pageController@products');
 
 Route::get('news', function()
 {
@@ -40,20 +38,19 @@ Route::get('contact', function()
     return View::make('pages.contact');
 });
 
-Route::get('detail', function()
-{
-    return View::make('pages.detail');
-});
+Route::get('detail/{stt}', 
+    ['as'=>'detail','uses'=>'pageController@detail']);
 
+
+
+
+ // ADMIN   
 Route::get('admin', function()
 {
     return View::make('pages.admin');
 });
 
-Route::get('allproducts', function()
-{
-    return View::make('pages.allproducts');
-});
+Route::get('allproducts', 'pageController@allproducts');
 
 Route::get('management', function()
 {

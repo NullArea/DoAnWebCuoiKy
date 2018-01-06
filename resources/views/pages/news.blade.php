@@ -1,5 +1,5 @@
 @extends('layouts.default')
-<title>@yield('title')Motor News</title>
+@section('title', 'Motor News')
 @section('content')
     <h1>News Hear!</h1>
-@stop
+@endsection

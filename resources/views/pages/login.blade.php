@@ -1,5 +1,5 @@
 @extends('layouts.default')
-<title>@yield('title')Log-In</title>
+@section('title', 'Log-In')
 @section('content')
     i am the login page
-@stop
+@endsection

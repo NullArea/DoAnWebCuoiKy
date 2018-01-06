@@ -1,5 +1,5 @@
 @extends('layouts.default')
-<title>About NAGroup</title>
+@section('title', 'About NAGroup')
 @section('content')
                 <div class="about_wrapper"><h1>Long-Term Business</h1>
                 </div>
@@ -50,4 +50,4 @@
                         </div><div class="clear"></div>
                     </div>
                 </div>
-@stop
+@endsection

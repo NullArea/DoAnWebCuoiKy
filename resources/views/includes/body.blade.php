@@ -6,21 +6,16 @@
 					<div class="box_header_user_menu">
 						<ul class="user_menu">
 							<li class="act first">
-								<a href="#">
-									<div class="button-t">
-										<span>Shipping &amp; Returns</span>
-									</div>
-								</a>
 							</li>
 							<li class="">
-								<a href="#">
+								<a href="register">
 									<div class="button-t">
 										<span>Create an Account</span>
 									</div>
 								</a>
 							</li>
 							<li class="last">
-								<a href="#">
+								<a href="login">
 									<div class="button-t">
 										<span>Log in</span></div>
 								</a>
