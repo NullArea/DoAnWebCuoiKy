@@ -14,7 +14,7 @@
                         <div class="grid_desc">
                             <p class="title">{{$product->tenxe}}</p>
 
-                            <div class="price" style="height: 19px;">
+                            <div class="price">
                                 <span class="reducedfrom">{{$product->gia}}$</span>
                                 <span class="actual">00$</span>
                             </div>

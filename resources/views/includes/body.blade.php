@@ -5,21 +5,45 @@
 				<div class="header">
 					<div class="box_header_user_menu">
 						<ul class="user_menu">
-							<li class="act first">
-							</li>
-							<li class="">
-								<a href="register">
-									<div class="button-t">
-										<span>Create an Account</span>
-									</div>
-								</a>
-							</li>
-							<li class="last">
-								<a href="login">
-									<div class="button-t">
-										<span>Log in</span></div>
-								</a>
-							</li>
+							@if (Auth::guest())
+								<li class="act first">
+								</li>
+								<li class="">
+									<a href="{{ route('register') }}">
+										<div class="button-t">
+											<span>Create an Account</span>
+										</div>
+									</a>
+								</li>
+								<li class="last">
+									<a href="{{ route('login') }}">
+										<div class="button-t">
+											<span>Log in</span></div>
+									</a>
+								</li>
+                        	@else
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+										{{ Auth::user()->name }}
+									</a>
+								</li>
+				
+								<li>
+									<a href="{{ route('logout') }}"
+										onclick="event.preventDefault();
+													document.getElementById('logout-form').submit();">
+										Dang Xuat
+									
+									</a>
+
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+										{{ csrf_field() }}
+									</form>
+								</li>
+			
+                        	@endif
+
+						
 						</ul>
 					</div>
 					<div class="header-right">

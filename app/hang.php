@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class sanpham extends Model
+class hang extends Model
 {
-    
+    protected $table = "hang";
 }

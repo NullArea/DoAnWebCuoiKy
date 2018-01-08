@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use DB;
 use App\slide;
 use App\xe;
+use App\hang;
+use App\loai;
+use App\phankhuc;
 
 class pageController extends Controller
 {
@@ -35,5 +38,19 @@ class pageController extends Controller
         $num = xe::count();
         $total = DB::table('xe')->sum('soluong');
         return view('pages.allproducts',compact('allproduct','num','total'));
+    }
+
+    public function management()
+    {
+        $allproduct = xe::all();
+        $hang = hang::all();
+        $loai = loai::all();
+        $phankhuc = phankhuc::all();
+        return view('pages.management',compact('allproduct','hang','loai','phankhuc'));
+    }
+
+    public function changepass()
+    {
+        return view('pages.changepass');
     }
 }

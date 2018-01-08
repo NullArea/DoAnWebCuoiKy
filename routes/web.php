@@ -45,14 +45,13 @@ Route::get('detail/{stt}',
 
 
  // ADMIN   
-Route::get('admin', function()
-{
-    return View::make('pages.admin');
-});
-
 Route::get('allproducts', 'pageController@allproducts');
 
-Route::get('management', function()
-{
-    return View::make('pages.management');
-});
+Route::get('management', 'pageController@management');
+
+Route::get('changepass', 'pageController@changepass');
+
+//Auth
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
