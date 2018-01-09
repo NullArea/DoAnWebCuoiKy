@@ -44,23 +44,23 @@ Route::get('detail/{id}',
 
 
  // ADMIN   
-Route::get('allproducts', 'pageController@allproducts');
+Route::get('allproducts', 'pageController@allproducts')->middleware('police');
 
-Route::get('management', 'pageController@management');
+Route::get('management', 'pageController@management')->middleware('police');
 
-Route::get('changepass', 'pageController@changepass');
+Route::get('changepass', 'pageController@changepass')->middleware('police');
 
-Route::get('addmotor', 'pageController@addmotor');
-Route::post('addmotor', 'pageController@paddmotor');
+Route::get('addmotor', 'pageController@addmotor')->middleware('police');
+Route::post('addmotor', 'pageController@paddmotor')->middleware('police');
 
-Route::get('addmodel', 'pageController@addmodel');
-Route::post('addmodel', 'pageController@paddmodel');
+Route::get('addmodel', 'pageController@addmodel')->middleware('police');
+Route::post('addmodel', 'pageController@paddmodel')->middleware('police');
 
-Route::get('remove', 'pageController@remove');
-Route::post('remove', 'pageController@premove');
+Route::get('remove', 'pageController@remove')->middleware('police');
+Route::post('remove', 'pageController@premove')->middleware('police');
 
-Route::get('editmodel', 'pageController@editmodel');
-Route::post('editmodel', 'pageController@peditmodel');
+Route::get('editmodel', 'pageController@editmodel')->middleware('police');
+Route::post('editmodel', 'pageController@peditmodel')->middleware('police');
 
 
 //Auth
