@@ -23,7 +23,7 @@
 								</li>
                         	@else
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+									<a href="profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 										{{ Auth::user()->name }}
 									</a>
 								</li>
@@ -59,8 +59,8 @@
 							<a href="/"><img src="images/logo3.png" alt=""/></a>
 						</div>
 						<div class="search">
-							<input type="text" class="textbox" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-							<button class="gray-button"><span>Search</span></button>
+							<input id="word" name="word" type="text" class="textbox" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+							<a href="search"><button class="gray-button"><span>Search</span></button></a>
 						</div>
 						<div class="clear"></div>
 					</div>

@@ -11,6 +11,7 @@ use App\hang;
 use App\loai;
 use App\phankhuc;
 use App\contact;
+use App\User;
 
 class pageController extends Controller
 {
@@ -57,6 +58,21 @@ class pageController extends Controller
         return view('pages.changepass');
     }
 
+    public function search()
+    {
+              
+        return view('pages.search');
+    }    
+    public function psearch(Request $re)
+    {
+        
+        $this->validate($re,[
+            'word'=>'required'
+        ]);
+        $xe=xe::where('tenxe','=',$re->word)->first();
+        return redirect('search');
+    }
+
     public function contact()
     {
               
@@ -65,7 +81,7 @@ class pageController extends Controller
     public function pcontact(Request $re)
     {
         
-        $this->validate($request,[
+        $this->validate($re,[
             'ten'=>'required',
             'mail'=>'required',
             'sdt'=>'required',
@@ -74,8 +90,8 @@ class pageController extends Controller
         ],[
             'ten.required'=>'Your Name?',
             'mail.required'=>'Your Email?',
-            'sdt.min'=>'Your Phone?',
-            'sub.unique'=>'Your Opinion?'
+            'sdt.required'=>'Your Phone?',
+            'sub.required'=>'Your Opinion?'
             
 
         ]);
@@ -88,6 +104,43 @@ class pageController extends Controller
 
         return redirect('contact');
     }
+
+    public function profile()
+    {
+              
+        return view('pages.profile');
+    }    
+    public function pprofile(Request $re)
+    {
+        
+        $this->validate($re,[
+            'name'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'address'=>'required',
+            'password'=>'required'
+           
+        ],[
+            'name.required'=>'Your Name?',
+            'email.required'=>'Your Email?',
+            'phone.required'=>'Your Phone?',
+            'address.required'=>'Your Address?',
+            'password.required'=>'Your Pass?'
+
+            
+
+        ]);
+        $u = User::where('name','=',$re->name)->first();
+        $u->password=$re->password;
+        $u->mail=$re->email;
+        $u->sdt=$re->phone;
+        $u->sub=$re->address;
+        $u->save();
+
+        return redirect('profile');
+    }
+
+
 
     
 

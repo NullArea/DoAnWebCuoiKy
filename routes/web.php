@@ -33,9 +33,14 @@ Route::get('news', function()
     return View::make('pages.news');
 });
 
+Route::get('search', 'pageController@search');
+Route::post('search', 'pageController@psearch');
+
 Route::get('contact', 'pageController@contact');
 Route::post('contact', 'pageController@pcontact');
 
+Route::get('profile', 'pageController@profile');
+Route::post('profile', 'pageController@pprofile');
 
 Route::get('detail/{id}', 
     ['as'=>'detail','uses'=>'pageController@detail']);
