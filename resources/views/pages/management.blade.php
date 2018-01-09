@@ -47,13 +47,13 @@ $(".trigger").click(function(){
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Image</th>
+                                <th>Image Link</th>
                                 <th>Price</th>
                                 <th>Editon</th>
                                 <th>Number</th>
                                 <th>ID</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <th>---</th>
+                                <th>---</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -70,163 +70,24 @@ $(".trigger").click(function(){
                                 <td>{{$product->gia}}</td>
                                 <td>{{$product->namsx}}</td>
                                 <td>{{$product->soluong}}</td>
-                                <td>{{$product->stt}}</td>
-                                <td><a href="#tab3-tab"><img src="imagesad/edit.png" alt="" title="" border="0" /></a></td>
-                                <td><a href="#tab4-tab"><img src="imagesad/trash.gif" alt="" title="" border="0" /></a></td>
+                                <td>{{$product->id}}</td>
+                                <td>---</td>
+                                <td>---</td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
         
                     <ul id="tabsmenu" class="tabsmenu">
-                        <li class="active"><a href="#tab1">Add Motor</a></li>
-                        <li><a href="#tab2">Add Model</a></li>
-                        <li><a href="#tab3">Edit Model</a></li>
-                        <li><a href="#tab4">Remove</a></li>
+                        <div class="form_row">
+                            <a href="addmotor"><input type="submit" class="form_choose" value="Add Motor" /></a>
+                            <a href="addmodel"><input type="submit" class="form_choose" value="Add Model" /></a>
+
+                            <a href="editmodel"><input id="remove" type="submit" class="form_choose" value="Edit" /></a>
+                            <a href="remove"><input type="submit" class="form_choose" value="Remove" /></a>
+                        </div>
                     </ul>
-                    <div id="tab1" class="tabcontent">
-                        <h3>Add a motor to your store</h3>
-                        <div class="form">
-                            
-                            <div class="form_row">
-                                <label>Brand</label>
-                                <select class="form_select" name="">
-                                    @foreach($hang as $hang)
-                                    <option>{{$hang->hang}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <div class="form_row">
-                                <label>Type</label>
-                                <select class="form_select" name="">
-                                    @foreach($loai as $loai)
-                                    <option>{{$loai->loai}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            
-                            <div class="form_row">
-                                <label>Name</label>
-                                <select class="form_select" name="">
-                                    <option>Select one</option>
-                                </select>
-                            </div>
-                        
-                            <div class="form_row">
-                                <input type="submit" class="form_submit" value="Submit" />
-                            </div> 
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <div id="tab2" class="tabcontent">
-                        <h3>Add new model</h3>
-                        <div class="form">
-                            
-                            <div class="form_row">
-                                <label>Brand</label>
-                                <select class="form_select" name="">
-                                    <option>Select one</option>
-                                </select>
-                            </div>
-
-                            <div class="form_row">
-                                <label>Type</label>
-                                <select class="form_select" name="">
-                                    <option>Select one</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form_row">
-                                <label>Segment</label>
-                                <select class="form_select" name="">
-                                    <option>Select one</option>
-                                </select>
-                            </div>
-
-                            <div class="form_row">
-                                <label>Name</label>
-                                <input type="text" class="form_input" name="" />
-                            </div>
-                        
-                            <div class="form_row">
-                                <label>Price</label>
-                                <input type="text" class="form_input" name="" />
-                            </div>
-
-                            <div class="form_row">
-                                <label>Year</label>
-                                <input type="text" class="form_input" name="" />
-                            </div>
-
-                            <div class="form_row">
-                                <label>Infomation</label>
-                                <input type="text" class="form_input" name="" />
-                            </div>
-
-                            <div class="form_row">
-                                <label>Image</label>
-                                <input type="text" class="form_input" name="" />
-                            </div>
-
-                            <div class="form_row">
-                                <input type="submit" class="form_submit" value="Submit" />
-                            </div> 
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-
-                    <div id="tab3" class="tabcontent">
-                        <h3>Edit a model</h3>
-                        <div class="form">
-                            
-                            <div class="form_row">
-                                <label>Choose a properties</label>
-                                <select class="form_select" name="">
-                                    <option>Select one</option>
-                                </select>
-                            </div>
-
-                            <div class="form_row">
-                                <label>New Infomation</label>
-                                <select class="form_select" name="">
-                                    <option>Select one</option>
-                                </select>
-                            </div>
-                        
-                        
-                            <div class="form_row">
-                                <input type="submit" class="form_submit" value="Submit" />
-                            </div> 
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-        
-                    <div id="tab4" class="tabcontent">
-                        <h3>Remove a Motor or Model</h3>
-                        <div class="form">
-                            
-                            <div class="form_row">
-                                <label>Motor or Model</label>
-                                <select class="form_select" name="">
-                                    <option>Select one</option>
-                                </select>
-                            </div>
-
-                            <div class="form_row">
-                                <label>Name</label>
-                                <select class="form_select" name="">
-                                    <option>Select one</option>
-                                </select>
-                            </div>
-                        
-                        
-                            <div class="form_row">
-                                <input type="submit" class="form_submit" value="Submit" />
-                            </div> 
-                            <div class="clear"></div>
-                        </div>
-                    </div>    
+                    @yield('content')   
                 </div><!-- end of right content-->
 </div>
                         

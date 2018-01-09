@@ -19,7 +19,7 @@
                     @foreach($new as $product)
                     <div class="grid_1_of_3 images_1_of_3">
                         <div class="grid_1">
-                            <a href="{{route('detail',$product->stt)}}"><img src="{{$product->hinh}}" title="continue reading" alt=""></a>
+                            <a href="{{route('detail',$product->id)}}"><img src="{{$product->hinh}}" title="continue reading" alt=""></a>
                             <div class="grid_desc">
                                 <p class="title">{{$product->tenxe}}</p>
 
@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="cart-button">
                                     <div class="cart">
-                                        <button class="button"><span>Details</span></button>
+                                    <a href="{{route('detail',$product->id)}}"><button class="button"><span>Details</span></button></a>
                                     </div>
                                     <button class="button"><span>Cart</span></button>
                                     <div class="clear"></div>

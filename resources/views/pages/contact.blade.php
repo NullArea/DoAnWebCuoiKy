@@ -11,19 +11,19 @@
                             <form>
                                 <div>
                                     <span><label>NAME</label></span>
-                                    <span><input name="userName" type="text" class="textbox"></span>
+                                    <span><input name="ten" type="text" class="textbox"></span>
                                 </div>
                                 <div>
                                     <span><label>E-MAIL</label></span>
-                                    <span><input name="userEmail" type="text" class="textbox"></span>
+                                    <span><input name="mail" type="text" class="textbox"></span>
                                 </div>
                                 <div>
                                     <span><label>MOBILE</label></span>
-                                    <span><input name="userPhone" type="text" class="textbox"></span>
+                                    <span><input name="sdt" type="text" class="textbox"></span>
                                 </div>
                                 <div>
                                     <span><label>SUBJECT</label></span>
-                                    <span><textarea name="userMsg"> </textarea></span>
+                                    <span><textarea name="sub"> </textarea></span>
                                 </div>
                                 <div>
                                     <span><input type="submit" value="Submit"></span>

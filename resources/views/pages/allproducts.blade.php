@@ -13,7 +13,7 @@
                     @foreach($allproduct as $product)
                     <div class="grid_1_of_3 images_1_of_3">
                         <div class="grid_1">
-                            <a href="{{route('detail',$product->stt)}}"><img src="{{$product->hinh}}" title="continue reading" alt=""></a>
+                            <a href="{{route('detail',$product->id)}}"><img src="{{$product->hinh}}" title="continue reading" alt=""></a>
                             <div class="grid_desc">
                                 <p class="title">{{$product->tenxe}} {{$product->namsx}}</p>
 

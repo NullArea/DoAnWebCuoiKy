@@ -33,12 +33,11 @@ Route::get('news', function()
     return View::make('pages.news');
 });
 
-Route::get('contact', function()
-{
-    return View::make('pages.contact');
-});
+Route::get('contact', 'pageController@contact');
+Route::post('contact', 'pageController@pcontact');
 
-Route::get('detail/{stt}', 
+
+Route::get('detail/{id}', 
     ['as'=>'detail','uses'=>'pageController@detail']);
 
 
@@ -50,6 +49,19 @@ Route::get('allproducts', 'pageController@allproducts');
 Route::get('management', 'pageController@management');
 
 Route::get('changepass', 'pageController@changepass');
+
+Route::get('addmotor', 'pageController@addmotor');
+Route::post('addmotor', 'pageController@paddmotor');
+
+Route::get('addmodel', 'pageController@addmodel');
+Route::post('addmodel', 'pageController@paddmodel');
+
+Route::get('remove', 'pageController@remove');
+Route::post('remove', 'pageController@premove');
+
+Route::get('editmodel', 'pageController@editmodel');
+Route::post('editmodel', 'pageController@peditmodel');
+
 
 //Auth
 Auth::routes();
